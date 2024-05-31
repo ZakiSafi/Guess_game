@@ -5,9 +5,10 @@
 // document.querySelector('.score').textContent = '9'
 // document.querySelector('.highscore').textContent = '8'
 
+const random = Math.trunc(Math.random()*20) +1;
 document.querySelector('.check').addEventListener('click',function(){
     const guess = document.querySelector('.guess').value;
-    const random = Math.trunc(Math.random()*20) +1;
+    console.log(random);
     if(!guess){
         document.querySelector('.message').textContent = 'NO number to guess';
     }else if(guess < random){
