@@ -16,25 +16,14 @@ document.querySelector('.check').addEventListener('click',function(){
     if(!guess){
         document.querySelector('.message').textContent = 'NO number to guess';
     }
-    // when the guess is less than the random value
-    else if(guess < random){
-        if(score  >1){
-            document.querySelector('.message').textContent = 'Too short';
-        score--;
-        document.querySelector('.score').textContent = score;
-        }else{
-            document.querySelector('.message').textContent = 'You lose the game!';
-            document.querySelector('.score').textContent = score -1;
-
-        }
-        
-    }
-    // when the guess is greater than the random number
-    else if(guess> random){
+    // when the guess is not equal to random number
+    else if(guess != random){
         if(score >1){
-            document.querySelector('.message').textContent = 'to great';
+            document.querySelector('.message').textContent = guess >random ? 'To great' :'Too short';
             score--;
-            document.querySelector('.score').textContent = score-1;
+            document.querySelector('.score').textContent = score;
+
+
         }
         else{
             document.querySelector('.message').textContent = 'You lose the game!';
